@@ -1,0 +1,9 @@
+.Pokegame {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 150px;
+}
+
+.Pokegame-versus {
+    margin: auto
+}

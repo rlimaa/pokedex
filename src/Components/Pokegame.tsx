@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Pokemon } from "../Interfaces/PokedexProps";
 import Pokedex from "./Pokedex";
+import vs from "../Assets/vs.png";
+import bkg from "../Assets/bkg.png";
 import pokemonList from "./PokemonList";
+import "./Pokegame.css"
 
 class Pokegame extends Component {
     generateHand(pokemonList: Pokemon[]) {
@@ -25,9 +28,12 @@ class Pokegame extends Component {
         const player2Xp = player2.reduce((partialSum, item) => partialSum + item.base_experience, 0);
 
         return (
-            <div className="Pokegame">
-                <Pokedex isWinner={player1Xp > player2Xp} PokemonList={player1}/>
-                <Pokedex isWinner={player1Xp < player2Xp} PokemonList={player2}/>
+            <div className="Pokegame" style={{background: bkg}}>
+                <Pokedex playerName="Player One" isWinner={player1Xp > player2Xp} PokemonList={player1}/>
+                <div className="Pokegame-versus">
+                    <img src={vs}/>
+                </div>
+                <Pokedex playerName="Player Two" isWinner={player1Xp < player2Xp} PokemonList={player2}/>
             </div>
         );
     }

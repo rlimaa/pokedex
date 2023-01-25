@@ -2,22 +2,24 @@ import React, { Component } from "react"
 import PokedexProps from "../Interfaces/PokedexProps";
 import PokeCard from "./PokeCard";
 import pokemonList from "./PokemonList";
+import "./Pokedex.css"
 
 class Pokedex extends Component<PokedexProps, {}> {
     static defaultProps: PokedexProps = {
         PokemonList: pokemonList,
-        isWinner: false
+        isWinner: false,
+        playerName: "Pokedex"
     }
 
     render() {
-        const winnerHtml = (<h1>This Hand wins!</h1>);
         return (
             <div className="Pokedex">
-                <h1>Pokedex</h1>
-                <div className="Pokedex-cards">
-                    {this.props.PokemonList.map(p => (<PokeCard Pokemon={p}/>))}
+                <div className={this.props.isWinner ? "Pokedex-winner" : "Pokedex-loser"}>
+                    <h1 className="Pokedex-title">{this.props.playerName} - {this.props.isWinner ? "Winner" : "Loser"}</h1>
+                    <div className="Pokedex-cards">
+                        {this.props.PokemonList.map(p => (<PokeCard Pokemon={p}/>))}
+                    </div>
                 </div>
-                {this.props.isWinner && winnerHtml}
             </div>
         );
     }

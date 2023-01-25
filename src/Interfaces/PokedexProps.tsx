@@ -1,6 +1,7 @@
 declare interface PokedexProps {
     PokemonList: Pokemon[],
-    isWinner: boolean
+    isWinner: boolean,
+    playerName: string
 }
 
 declare interface PokeCardProps

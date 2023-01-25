@@ -23,12 +23,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 250px;
+	height: 150px;
 	border-radius: 3px;
 	margin-bottom: 1rem;
 }
 .Pokecard img {
+    align-self: center;
 	transition: all ease 500ms;
+    margin: auto;
 }
 .Pokecard img:hover {
 	transform: scale(1.25);
