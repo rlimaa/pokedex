@@ -1,5 +1,6 @@
 declare interface PokedexProps {
-    PokemonList: Pokemon[]
+    PokemonList: Pokemon[],
+    isWinner: boolean
 }
 
 declare interface PokeCardProps
@@ -15,4 +16,4 @@ declare interface Pokemon {
 }
 
 export default PokedexProps;
-export type { PokeCardProps };
+export type { PokeCardProps, Pokemon };
